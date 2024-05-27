@@ -4,6 +4,10 @@ main = "src/index.js"
 compatibility_date = "2024-05-24"
 compatibility_flags = ["nodejs_compat"]
 
+[[r2_buckets]]
+binding = 'IMAGES' # <~ valid JavaScript variable name
+bucket_name = 'r2-to-workers'
+
 # Automatically place your workloads in an optimal location to minimize latency.
 # If you are running back-end logic in a Worker, running it closer to your back-end infrastructure
 # rather than the end user may result in better performance.
