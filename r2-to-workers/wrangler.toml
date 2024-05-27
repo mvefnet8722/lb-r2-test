@@ -4,14 +4,6 @@ main = "src/index.js"
 compatibility_date = "2024-05-24"
 compatibility_flags = ["nodejs_compat"]
 
-[env.staging]
-name = "staging-lb-r2"
-vars = { ENVIRONMENT = "staging" }
-workers_dev = true
-r2_buckets = [
-	{ binding ="IMAGES", bucket_name = "r2-to-workers"}
-]
-
 [env.prod]
 name = "prod-lb-r2"
 vars = { ENVIRONMENT = "production" }
