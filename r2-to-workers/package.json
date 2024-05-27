@@ -1,5 +1,5 @@
 {
-  "name": "lb-r2-test",
+  "name": "r2-to-workers",
   "version": "0.0.0",
   "private": true,
   "scripts": {

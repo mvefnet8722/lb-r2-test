@@ -1,36 +1,8 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "lb-r2-test"
+name = "r2-to-workers"
 main = "src/index.js"
-compatibility_date = "2024-05-12"
+compatibility_date = "2024-05-24"
 compatibility_flags = ["nodejs_compat"]
-
-[dev]
-port = 9001
-local_protocol="http"
-upstream_protocol="https"
-
-[env.staging]
-name = "staging-lb-r2"
-vars = { ENVIRONMENT = "staging" }
-workers_dev = true
-r2_buckets = [
-	{ binding ="IMAGES", bucket_name = "images"}
-]
-
-[env.prod]
-name = "prod-lb-r2"
-vars = { ENVIRONMENT = "production" }
-routes = [
-    { pattern = "lb-r2.vefnetworks.com", custom_domain = true },
-]
-r2_buckets = [
-	{ binding ="IMAGES", bucket_name = "images"}
-]
-# Bind an R2 Bucket. Use R2 to store arbitrarily large blobs of data, such as files.
-# Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#r2-buckets
-# [[r2_buckets]]
-# binding = "IMAGES"
-# bucket_name = "images"
 
 # Automatically place your workloads in an optimal location to minimize latency.
 # If you are running back-end logic in a Worker, running it closer to your back-end infrastructure
@@ -117,6 +89,11 @@ r2_buckets = [
 # [[queues.consumers]]
 # queue = "my-queue"
 
+# Bind an R2 Bucket. Use R2 to store arbitrarily large blobs of data, such as files.
+# Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#r2-buckets
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
 
 # Bind another Worker service. Use this binding to call another Worker without network overhead.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
