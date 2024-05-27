@@ -21,7 +21,7 @@ r2_buckets = [
 name = "prod-lb-r2"
 vars = { ENVIRONMENT = "production" }
 routes = [
-    { pattern = "lb-r2.erfianugrah.com", custom_domain = true },
+    { pattern = "lb-r2.vefnetworks.com", custom_domain = true },
 ]
 r2_buckets = [
 	{ binding ="IMAGES", bucket_name = "images"}
