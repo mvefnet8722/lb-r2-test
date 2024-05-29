@@ -8,7 +8,7 @@ compatibility_flags = ["nodejs_compat"]
 name = "prod-lb-r2"
 vars = { ENVIRONMENT = "production" }
 routes = [
-    { pattern = "r2-worker.vefnetworks.com", custom_domain = true },
+    { pattern = "r2.vefnetworks.com", custom_domain = true },
 ]
 
 [[r2_buckets]]
